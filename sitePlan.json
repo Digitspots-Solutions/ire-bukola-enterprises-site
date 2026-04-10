@@ -1,0 +1,49 @@
+{
+  "businessName": "Ire Bukola Enterprises",
+  "industry": "Financial Services - POS Merchant",
+  "tone": "professional-friendly",
+  "tagline": "Your Trusted Financial Partner in Udu",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Fast, Secure & Reliable POS Services in Udu\n\nIre Bukola Enterprises provides seamless cash withdrawal, fund transfers, and bill payment services right in your neighborhood. Bank with confidence, transact with ease.\n\nOpen Daily | Instant Service | Zero Hassle",
+      "imagePrompt": "Professional Nigerian POS merchant counter with modern card payment terminal, clean organized workspace, Nigerian naira notes visible, friendly customer service atmosphere, bright natural lighting, Delta State business environment, photorealistic, high quality",
+      "layout": "centered"
+    },
+    {
+      "id": "services",
+      "name": "Our Services",
+      "copy": "Complete Financial Solutions at Your Doorstep\n\nCash Withdrawal\nWithdraw cash instantly with your ATM card. No long bank queues, no stress. Available amounts from ₦1,000 to ₦500,000 daily.\n\nFund Transfers\nSend money to any Nigerian bank account within seconds. Fast, secure, and reliable transfer service for all your payment needs.\n\nBill Payments\nPay your PHCN bills, cable TV subscriptions (DSTV, GOtv, Startimes), and airtime recharge all in one place. Quick and convenient.\n\nCash Deposits\nDeposit cash directly into your bank account without visiting the bank. Same-day processing guaranteed.\n\nBalance Inquiry\nCheck your account balance instantly. Know exactly what you have before making transactions.",
+      "imagePrompt": "Modern POS terminal processing transaction, Nigerian debit cards, mobile money transfer interface, PHCN and DSTV logos, Nigerian currency notes, professional financial services setup, clean bright environment, photorealistic documentation style",
+      "layout": "grid"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "Your Neighborhood Financial Partner\n\nIre Bukola Enterprises is a trusted POS merchant serving the Udu community in Delta State. Located at No.14A Delta way DSC permanent camp Orhuwhorun, we've built our reputation on reliability, security, and excellent customer service.\n\nWe understand that accessing financial services shouldn't be complicated or time-consuming. That's why we're committed to providing fast, efficient, and secure transactions for every customer who walks through our door.\n\nWhether you need to withdraw cash urgently, transfer funds to a loved one, or pay your bills, we're here to serve you with a smile. Our experience with all major Nigerian banks and payment platforms ensures smooth transactions every time.\n\nOpen daily to serve the Udu community and surrounding areas.",
+      "imagePrompt": "Welcoming Nigerian POS business storefront in Delta State, professional signage, secure transaction environment, community-focused atmosphere, customers being served with care, typical Nigerian neighborhood setting, warm natural lighting, photorealistic",
+      "layout": "split"
+    },
+    {
+      "id": "why-choose",
+      "name": "Why Choose Us",
+      "copy": "The Ire Bukola Advantage\n\nConvenient Location\nEasily accessible at DSC permanent camp Orhuwhorun. No need to travel far for banking services.\n\nFast Service\nMost transactions completed in under 2 minutes. We value your time.\n\nSecure Transactions\nBank-grade security for every transaction. Your money and information are safe with us.\n\nFriendly Staff\nProfessional, courteous service that makes you feel at home. We treat every customer like family.\n\nExtended Hours\nOpen when you need us most, including weekends and public holidays.\n\nAll Banks Supported\nWe work with all Nigerian banks - GTBank, Zenith, First Bank, Access, UBA, and more.",
+      "imagePrompt": "Trustworthy Nigerian POS merchant showing security features, happy customers completing transactions, professional service counter, modern payment technology, community trust symbols, Delta State business environment, bright professional photography",
+      "layout": "cards"
+    },
+    {
+      "id": "contact",
+      "name": "Visit Us Today",
+      "copy": "Ready to Experience Hassle-Free Banking?\n\nStop by Ire Bukola Enterprises for all your financial service needs. We're here to serve you.\n\nLocation: No.14A Delta way DSC permanent camp Orhuwhorun, Udu LGA, Delta State\n\nCall or WhatsApp us for inquiries about our services, transaction limits, or any questions you may have.\n\nWe look forward to serving you!",
+      "imagePrompt": "Nigerian business contact section with mobile phone showing WhatsApp interface, Delta State map location marker, professional contact details display, welcoming customer service imagery, modern clean design, photorealistic",
+      "layout": "centered"
+    }
+  ],
+  "contact": {
+    "phone": "+2348032833366",
+    "email": "",
+    "address": "No.14A Delta way DSC permanent camp Orhuwhorun, Udu LGA, Delta State",
+    "whatsapp": "https://wa.me/2348032833366"
+  }
+}
