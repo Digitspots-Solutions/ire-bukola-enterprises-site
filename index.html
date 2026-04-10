@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ire Bukola Enterprises - Your Trusted Financial Partner in Udu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1B2A4A;
+            --color-accent: #C9A84C;
+            --color-bg: #FAFAF8;
+            --color-text: #1A1A1A;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --border-radius: 4px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 250, 248, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.25rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-text);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-bg);
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            color: white;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-features {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 2.5rem;
+            color: var(--color-accent);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--color-accent);
+            color: var(--color-primary);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(201, 168, 76, 0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 2rem;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.3s; }
+        section:nth-child(5) { animation-delay: 0.4s; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--color-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .service-card h3 {
+            font-size: 1.75rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        #about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        /* Why Choose Section */
+        .why-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--color-accent);
+            transition: transform 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .why-card h3 {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .why-card p {
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--color-primary);
+            color: white;
+            text-align: center;
+        }
+
+        #contact h2 {
+            color: white;
+            font-size: 2.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #contact p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .contact-info {
+            margin: 3rem 0;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item strong {
+            color: var(--color-accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--color-accent);
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--color-accent);
+            color: var(--color-primary);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(201, 168, 76, 0.3);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-text);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 2.75rem;
+            }
+
+            section {
+                padding: 60px 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            section {
+                padding: 48px 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid,
+            .why-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="logo">Ire Bukola Enterprises</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#why-choose">Why Choose Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="hero">
+        <div class="hero-bg">
+            <img src="https://images.pexels.com/photos/5239803/pexels-photo-5239803.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="POS Services">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Fast, Secure & Reliable POS Services in Udu</h1>
+            <p>Ire Bukola Enterprises provides seamless cash withdrawal, fund transfers, and bill payment services right in your neighborhood. Bank with confidence, transact with ease.</p>
+            <div class="hero-features">Open Daily | Instant Service | Zero Hassle</div>
+            <a href="#contact" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Complete Financial Solutions at Your Doorstep</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Cash Withdrawal</h3>
+                    <p>Withdraw cash instantly with your ATM card. No long bank queues, no stress. Available amounts from ₦1,000 to ₦500,000 daily.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Fund Transfers</h3>
+                    <p>Send money to any Nigerian bank account within seconds. Fast, secure, and reliable transfer service for all your payment needs.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Bill Payments</h3>
+                    <p>Pay your PHCN bills, cable TV subscriptions (DSTV, GOtv, Startimes), and airtime recharge all in one place. Quick and convenient.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Cash Deposits</h3>
+                    <p>Deposit cash directly into your bank account without visiting the bank. Same-day processing guaranteed.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Balance Inquiry</h3>
+                    <p>Check your account balance instantly. Know exactly what you have before making transactions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/34628678/pexels-photo-34628678.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="About Ire Bukola Enterprises">
+                </div>
+                <div class="about-text">
+                    <h2>Your Neighborhood Financial Partner</h2>
+                    <p>Ire Bukola Enterprises is a trusted POS merchant serving the Udu community in Delta State. Located at No.14A Delta way DSC permanent camp Orhuwhorun, we've built our reputation on reliability, security, and excellent customer service.</p>
+                    <p>We understand that accessing financial services shouldn't be complicated or time-consuming. That's why we're committed to providing fast, efficient, and secure transactions for every customer who walks through our door.</p>
+                    <p>Whether you need to withdraw cash urgently, transfer funds to a loved one, or pay your bills, we're here to serve you with a smile. Our experience with all major Nigerian banks and payment platforms ensures smooth transactions every time.</p>
+                    <p>Open daily to serve the Udu community and surrounding areas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Us</h2>
+                <p>The Ire Bukola Advantage</p>
+            </div>
+            <div class="why-cards">
+                <div class="why-card">
+                    <h3>Convenient Location</h3>
+                    <p>Easily accessible at DSC permanent camp Orhuwhorun. No need to travel far for banking services.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Fast Service</h3>
+                    <p>Most transactions completed in under 2 minutes. We value your time.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Secure Transactions</h3>
+                    <p>Bank-grade security for every transaction. Your money and information are safe with us.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Friendly Staff</h3>
+                    <p>Professional, courteous service that makes you feel at home. We treat every customer like family.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Extended Hours</h3>
+                    <p>Open when you need us most, including weekends and public holidays.</p>
+                </div>
+                <div class="why-card">
+                    <h3>All Banks Supported</h3>
+                    <p>We work with all Nigerian banks - GTBank, Zenith, First Bank, Access, UBA, and more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Visit Us Today</h2>
+            <p>Ready to Experience Hassle-Free Banking?</p>
+            <p>Stop by Ire Bukola Enterprises for all your financial service needs. We're here to serve you.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Location</strong>
+                    No.14A Delta way DSC permanent camp Orhuwhorun, Udu LGA, Delta State
+                </div>
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <a href="tel:+2348032833366">+234 803 283 3366</a>
+                </div>
+            </div>
+            <p>Call or WhatsApp us for inquiries about our services, transaction limits, or any questions you may have.</p>
+            <div class="contact-buttons">
+                <a href="tel:+2348032833366" class="contact-btn">Call Now</a>
+                <a href="https://wa.me/2348032833366" class="contact-btn whatsapp-btn" target="_blank">WhatsApp Us</a>
+            </div>
+            <p style="margin-top: 2rem;">We look forward to serving you!</p>
+        </div>
+    </section>
+
+    <a href="https://wa.me/2348032833366" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 8.135-2.135c2.369 1.228 5.021 1.885 7.865 1.885 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.333c-2.547 0-5.043-0.713-7.211-2.061l-0.517-0.317-5.368 1.408 1.435-5.348-0.349-0.535c-1.483-2.281-2.323-4.927-2.323-7.647 0-7.485 6.093-13.579 13.579-13.579s13.579 6.093 13.579 13.579c0 7.485-6.093 13.579-13.579 13.579zM22.859 18.776c-0.391-0.197-2.315-1.143-2.672-1.273s-0.619-0.197-0.88 0.197c-0.261 0.391-1.011 1.273-1.239 1.535s-0.456 0.293-0.848 0.099c-0.391-0.197-1.652-0.609-3.147-1.941-1.163-1.037-1.948-2.317-2.176-2.708s-0.024-0.605 0.172-0.801c0.176-0.176 0.391-0.456 0.587-0.685s0.261-0.391 0.391-0.652c0.131-0.261 0.065-0.489-0.033-0.685s-0.88-2.119-1.205-2.901c-0.317-0.761-0.639-0.657-0.88-0.669-0.228-0.011-0.489-0.013-0.749-0.013s-0.685 0.099-1.043 0.489c-0.359 0.391-1.368 1.337-1.368 3.257s1.401 3.781 1.596 4.043c0.197 0.261 2.765 4.221 6.7 5.921 0.936 0.404 1.667 0.645 2.235 0.825 0.943 0.293 1.8 0.251 2.479 0.152 0.756-0.112 2.315-0.945 2.641-1.859s0.326-1.697 0.228-1.859c-0.099-0.163-0.359-0.261-0.749-0.456z"/>
+        </svg>
+    </a>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ire Bukola Enterprises. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
